@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>Help</title>
+		<meta name="generator" content="Bootply" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link href="../css/components.css" rel="stylesheet">
+		<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<style>
+            img{
+              padding: 40px;
+              display:block;
+            }
+            img.inline {
+              padding: 0px 3px;
+              display:inline;
+            }
+        </style>
+	</head>
+	<body>
+
+<header class="navbar navbar-default navbar-static-top" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand">Help</a>
+    </div>
+  </div>
+</header>
+
+<!-- Begin Body -->
+<div class="container">
+	<div class="row">
+  			<div class="col-md-3" id="leftCol">
+
+				<div class="well">
+              	<ul class="nav nav-stacked" id="sidebar">
+                  <li><a href="#layerslist">Layers list</a></li><li><a href="#charttool">Charts</a></li><li><a href="#selectiontools">Selection</a></li><li><a href="#drawfeature">Draw feature</a></li><li><a href="#geocoding">Geocoding</a></li><li><a href="#measuretools">Measure</a></li>
+              	</ul>
+  				</div>
+
+      		</div>
+      		<div class="col-md-9">
+              	<h2 id="sec0">Help</h2>
+
+              	<p>This document describes this Web map applications's controls and their usage.
+
+              	<hr class="col-md-12">
+
+						    <h2>Navigation</h2>
+
+						    <p>To move the map around, click-and-drag on it using the mouse's left button.</p>
+						    <p>To zoom in and out, besides the zoom buttons and slider, you can use the scroll wheel. You can also
+									zoom in to a rectangle. To do it, press the <i>SHIFT</i> key while you click-and-drag around the
+									area of interest with the left mouse button.</p>
+						    <p>You can rotate the map by pressing <i>SHIFT+ALT</i> keys while you click-and-drag the map.</p>
+						    <p>Depending on the settings, clicking on map features will open a pop up menu with the features
+									attributes.</p>
+
+              	<a name="layerslist"></a><h2>Layers list</h2><p>The layer list shows the layers in the application and allows managing them. Click the <b>Layers</b> button to
+  displays the layers list.</p>
+
+<img src="help_layerslist.png"/>
+
+<p>An eye icon is shown along the name of each layer, which allows toggling the layer's visibility.<p>
+
+<p>The rendering order of layers can be modified by clicking-and-dragging the layer's names in the list.
+  Layers on top are rendered at the end and will have rendering priority.</p>
+
+<p>For vector layers, the <img class="inline" src="help_zoom_to_button.png"><b>Zoom to</b> button can also be available.
+  Clicking on it will cause the map extent to change to the minimum extent that covers all the features in the layer.</p>
+
+<p>Clicking the <img class="inline" src="help_other_options.png"><i>Other options</i> button shows extra options.</p>
+
+<img src="help_other_options_list.png"/>
+
+<p>The opacity of the layer can be controlled using the <b>Opacity</b> slider.</p>
+
+<p>A <b>Download layer</b> button can also be available for vector layers, allowing to download the layer in a
+  predefined file format</p>
+
+<p>Vector layers features can be filtered using expressions on their attributes. Clicking on the filter icon shows
+  the filter dialog</p>
+
+<img src="help_layerslist_filter.png"/>
+
+<p>To add a new filter, enter an expression in the text box and click the <b>ADD</b> button. The Layer only
+  renders features in the map canvas that match the active filters.</p>
+
+<p>All active filters are listed below the filter field. Click on the <b>Remove</b> button to remove a filter.</p>
+
+<p>For information on the filter syntax, click the question mark icon next to the filter field.</p>
+
+<p>In the Layer list, depending on the web app settings, it may be possible to upload a local files and create new layer.</p>
+
+<p>To upload a file, click the <img class="inline"  src="help_add_layer_button.png"><i>Add Layer</i>. In the <b>New layer</b> dialog, for <b>Select layer source</b> select <i>Upload local file</i>. Then, clicking the <img class="inline" src="help_upload_file.png"><i>Upload file</i> button next to <b>Select location</b>, browse and select the file you which to upload. Only vector layers can be uploaded. The supported formats for layers are *GeoJSON*, *GPX* and *KML*.</p>
+
+<p>To create a new layer, click the <img class="inline"  src="help_add_layer_button.png"><i>Add Layer</i>. In the <b>New layer</b> dialog, for <b>Select layer source</b> select <i>Create new layerUpload local file</i>. Then, type the <b>Layer title</b> and choose the <b>Geometry type</b>. Attributes can be added by typing their names in a comma-separated list.</p>
+
+<p>Both <i>Upload a file</i> and <i>Create New Layer</i> options allow you to set the <b>Fill</b> and <b>Stroke</b> colors for the layer's features, as well as the <b>Stroke width</b></p>.
+
+<img src="help_layerslist_add_new_layer.png"/>
+
+<a name="charttool"></a><h2>Charts</h2><p>Charts can be created based on the selected features of a given layer. You
+  can open the chart window by clicking the Chart button in the menu.<p>
+
+<img src="help_charts_empty.png"/>
+
+<p>In the chart window, select one of the available charts using the Chart Name
+  drop-down list</p>
+
+<p>If the layer used by the chart that you have chosen has no selected
+  features, you will see an empty chart, as the one shown above. Use any of
+  the selection tools to select features. When the selection changes, the
+  chart panel is automatically updated, and you will see the chart
+  corresponding to the new selection.</p>
+
+<img src="help_chart_example.png"/>
+
+<p>As shown above, overing the chart's elements can provide more precise
+information.</p><a name="selectiontools"></a><h2>Selection</h2><p>Selection tools are used to select features in the vector layers of the web app that allow selection. Two
+  selection tools are available: Select by Rectangle and Clear Selection.</p>
+
+<img src="help_selection_tools.png"/>
+
+<p>If the <i>Select by Rectangle</i> tool is active, you can click and drag to define a rectangle. All features in
+  all selectable layers which are within the polygon will get selected. Previous selection, if it exist, will be
+  removed.</p>
+
+<p>Selected features will be rendered in a yellow color, to differentiate them from non-selected ones.</p>
+
+<p>To go back to map navigation mode, click the Navigation button.</p>
+
+<img src="help_navigation_button.png"/>
+
+<a name="drawfeature"></a><h2>Draw feature</h2><p>The Draw Feature allows you to add new features to existing vector layer, as long as they have been configured for that purpose.</p>
+
+<p>To add a new feature in any layer, click the <b>Draw Features</b> button and select the type of geometry you wish to create.</p>
+
+<img src="help_choose_geometry.png"/>
+
+<p>Then, click the map canvas to add vertexes to the feature. For polygons and lines geometries, you must add several vertexes. Double-click to add the last vertex and finish drawing.</p>
+
+<img src="help_draw_feature.png"/>
+
+<p>Once the drawing is finished, the attributes dialog shows, where you can edit the new feature's attributes. Select the layer that you want to assign the feature to. Only layers with the same geometry type as the drawn geometry will show in the drop-down list.</p>
+
+<img src="help_assign_layer.png"/>
+
+<p>Once the layer is selected, you can edit the attributes of the new feature. Click <b>Add</b> to save the attributes and the geometry and add it to the designated layer. Clicking <b>Cancel</b> will discard both the attributes and the geometry changes, and no feature is added.</p>
+
+<img src="help_edit_attributes.png"/><a name="geocoding"></a><h2>Geocoding</h2><p>The geocoding tools allows to search places by name and find them in the map.</p>
+
+<img src="help_geocoding.png"/>
+
+<p>To use it, start typing the name of a place in the search field. As you type, a list of places containing the
+  search text will be shown as links.<p>.
+
+<img src="help_geocoding_results.png"/>
+
+<p>Click on a link to see the corresponding place in the map. The map wil be moved to the coordinates of the point,
+  and a marker will be added to indicate its position.</p>
+
+<img src="help_geocoding_marker.png"/>
+<a name="measuretools"></a><h2>Measure</h2><p>Measure tools are used to get area and distance measurements over the map canvas.</p>
+
+<p>Click the Measures button and select one of the available tools: Distance
+    or Area.</p>
+
+<img src="help_measuretools.png"/>
+
+<p>Select the distance tool to measure distances. Click on the map to set the points that define the line to measure.</p>
+
+<img src="help_measuretools_distance.png"/>
+
+<p>When you have finished defining the line, double-click to end.</p>
+
+<img src="help_measuretools_distance_finished.png"/>
+
+<p>Select the area tool to measure areas. Click on the map to set the points that define the polygon to measure.</p>
+
+<img src="help_measuretools_area.png"/>
+
+<p>When you have finished defining the line, double-click to end.</p>
+
+<img src="help_measuretools_area_finished.png"/>
+
+<p>To remove the lines and polygons created by the distance and are tools,
+    click the measures button and select the <b>Remove</b> option.
+
+<p>To go back to map navigation mode, click the Navigation button.</p>
+
+<img src="help_navigation_button.png"/>
+
+
+
+
+      		</div>
+  	</div>
+</div>
+
+
+
+	<!-- script references -->
+		<script src="../resources/jquery.min.js"></script>
+		<script src="../resources/bootstrap/js/bootstrap.min.js"></script>
+	</body>
+</html>
