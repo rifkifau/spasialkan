@@ -79,7 +79,7 @@ var defaultSelectionStroke = new ol.style.Stroke({
                                 }
                             }
                             feature = feature.get('features')[0];
-                            
+
                         var value = "";
                         var style = [ new ol.style.Style({
                                 image: new ol.style.Icon({
@@ -95,7 +95,7 @@ zIndex: 0
                             })
                             ];
                         var allStyles = [];
-                        
+
                         allStyles.push.apply(allStyles, style);
                         return allStyles;
                     };
@@ -120,7 +120,7 @@ zIndex: 0
                             })
                             ]
                         var allStyles = [];
-                        
+
                         allStyles.push.apply(allStyles, style);
                         return allStyles;
                     };
@@ -141,7 +141,7 @@ var overlayLayers = [new ol.layer.Tile({
 	type: 'base-overlay',
 	title: 'Hydda roads and labels',
 	source: new ol.source.XYZ({
-		url: 'http://s.tile.openstreetmap.se/hydda/roads_and_labels/{z}/{x}/{y}.png'
+		url: 'https://s.tile.openstreetmap.se/hydda/roads_and_labels/{z}/{x}/{y}.png'
 	}),
     projection: 'EPSG:3857'
 })
@@ -153,7 +153,7 @@ var cluster_trip = new ol.source.Cluster({
                 });
                 var lyr_trip = new ol.layer.Vector({
                     opacity: 1.0,
-                    source: cluster_trip,  
+                    source: cluster_trip,
                     style: style_trip,
                     selectedStyle: selectionStyle_trip,
                     title: "Trip",
@@ -166,7 +166,7 @@ var cluster_trip = new ol.source.Cluster({
                     geometryType: "Point"
                 });
 var lyr_trip_overview = new ol.layer.Vector({
-                    source: cluster_trip,  
+                    source: cluster_trip,
                     style: style_trip});
 trip_geojson_callback = function(geojson) {
                               lyr_trip.getSource().getSource().addFeatures(new ol.format.GeoJSON().readFeatures(geojson));
