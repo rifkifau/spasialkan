@@ -1,7 +1,7 @@
 var petaku = L.map('kartogram').setView([-8.404913, 115.072245],10);
 
-var latarpeta = L.tileLayer('https://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+var latarpeta = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>''
 }).addTo(petaku);
 
 
