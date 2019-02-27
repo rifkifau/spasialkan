@@ -1,4 +1,4 @@
-var petaku = L.map('kartogram').setView([-8.347722, 115.094559],10);
+var petaku = L.map('kartogram').setView([-8.404913, 115.072245],10);
 
 var latarpeta = L.tileLayer('http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
