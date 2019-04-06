@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Index DemNas SeIndonesia</title>
+    <!-- <script src="src/jquery331.js" charset="utf-8"></script> -->
+    <link rel="stylesheet" href="src/leaflet.css">
+    <script src="src/leaflet.js" charset="utf-8"></script>
+    <script src="src/esri-leaflet.js" charset="utf-8"></script>
+    <script src="src/leaflet.ajax.js" charset="utf-8"></script>
+    <link rel="shortcut icon" href="data/logo.png">
+    <script src="src/indonesia.js" charset="utf-8"></script>
+
+    <style>
+      html, body {
+        height:100%;
+        width:100%;
+        padding: 0px;
+        margin:  0px;
+      }
+      #demnas {
+        width: 100%;
+        height: 100%
+      }
+
+    </style>
+  </head>
+  <body>
+    <div id="demnas">
+
+    </div>
+    <script>
+
+      var peta = L.map('demnas').setView([-2.352822, 118.599210], 5);
+
+
+      var petalatar = {
+      OSM: L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          attribution: '&copy; <a href="https://openstreetmap.org">OpenStreetMap</a> contributors,<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
+      }),
+      // RBI: L.tileLayer.wms('http://palapa.big.go.id:8080/geoserver/ows?', {
+      //     layers: 'basemap_rbi:basemap',
+      //     attribution: 'Basemap &copy; <a href="http://www.big.go.id">Badan Informasi Geospasial</a>',
+      // })
+    };
+    petalatar.OSM.addTo(peta);
+
+
+    // L.esri.dynamicMapLayer({
+    //     url: 'http://portal.ina-sdi.or.id/arcgis/rest/services/IGD/IGD_250K_BatasWilayah/MapServer/2',
+    //     opacity: 0.7
+    //   }).addTo(peta);
+
+    // MENGGUNAKAN JQUERY
+      //     $.ajax({
+      //     dataType: "json",
+      //     url: "data/indexdemnas/indonesia.geojson",
+      //     success: function(data) {
+      //         L.geoJson(data, {
+      //           onEachFeature: onEachFeature
+      //         }).addTo(peta);
+      //     }
+      //  }).error(function() {});
+      //
+      //
+      // function onEachFeature(feature, layer) {
+      //   layer.bindPopup(feature.properties.NOMOR_PETA);
+      // }
+      function getColor(d) {
+          return d == "PAPUA" ? '#800026' :
+                 d == "SUMATERA"  ? '#b3bd00' :
+                 d == "JAWA"  ? '#1ad7e3' :
+                 d == "SULAWESI"  ? '#2a5efc' :
+                 d == "MALUKU"   ? '#fc3bef' :
+                 d == "KALIMANTAN"   ? '#0fad2d' :
+                            '#FFEDA0';
+      }
+
+      function styleDemnas(feature) {
+        return {
+            fillColor: getColor(feature.properties.REGION),
+            weight: 1,
+            opacity: 1,
+            color: 'white',
+            dashArray: '2',
+            fillOpacity: 0.7
+              };
+      }
+
+    var demnasLayer = L.geoJson(indonesia, {style: styleDemnas}).bindPopup(function (layer, feature) {
+        return feature.properties.NOMOR_PETA;
+    }).addTo(peta);
+
+      // L.geoJSON(indonesia, {
+      //     style: function (feature) {
+      //         return {color: feature.properties.color};
+      //     }
+      // }).bindPopup(function (layer) {
+      //     return layer.feature.properties.NOMOR_PETA;
+      // }).addTo(peta);
+	  
+    // MENGGUNAKAN LEAFLET.AJAX.JS
+    var batnasLayer = new L.GeoJSON.AJAX("data/batimetrinasional.geojson",
+    {
+          style: function (feature) {
+              return {
+                fillColor: 'orange',
+                weight: 1,
+                opacity: 1,
+                color: 'white',
+                dashArray: '2',
+                fillOpacity: 0.7
+            };
+          }
+          
+    });
+    batnasLayer.bindPopup(function (layer) {
+        return "Indeks Peta :"+layer.feature.properties.Penamaan;
+    });
+    // batnasLayer.addTo(peta);
+
+    var petaoverlay = {
+      "DEMNAS" : demnasLayer,
+      "BATNAS" : batnasLayer,
+    };
+    L.control.layers(petaoverlay, petalatar).addTo(peta);
+    
+    </script>
+  </body>
+</html>
