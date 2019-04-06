@@ -2,8 +2,10 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Index DemNas SeIndonesia</title>
-    <!-- <script src="src/jquery331.js" charset="utf-8"></script> -->
+    <title>Indeks DEMNAS & BATNAS</title>
+    <meta name="description"  content="Indeks DEMNAS & BATNAS, Download data resolusi tinggi dari BIG" />
+		<meta name="keywords"  content="batnas, demnas, big, badan informasi geospasial, batimetri nasional, resolusi tinggi" />
+    <script src="src/jquery331.js" charset="utf-8"></script>
     <link rel="stylesheet" href="src/leaflet.css">
     <script src="src/leaflet.js" charset="utf-8"></script>
     <script src="src/esri-leaflet.js" charset="utf-8"></script>
@@ -87,8 +89,8 @@
               };
       }
 
-    var demnasLayer = L.geoJson(indonesia, {style: styleDemnas}).bindPopup(function (layer, feature) {
-        return feature.properties.NOMOR_PETA;
+    var demnasLayer = L.geoJson(indonesia, {style: styleDemnas}).bindPopup(function (layer) {
+        return "Indeks Peta : <a href='http://tides.big.go.id/DEMNAS/download.php?download_file=DEMNAS_"+layer.feature.properties.NOMOR_PETA+"_v1.0.tif'>"+layer.feature.properties.NOMOR_PETA+"</a>";
     }).addTo(peta);
 
       // L.geoJSON(indonesia, {
@@ -115,7 +117,8 @@
           
     });
     batnasLayer.bindPopup(function (layer) {
-        return "Indeks Peta :"+layer.feature.properties.Penamaan;
+        return "Indeks Peta (MSL): <a href='http://tides.big.go.id/DEMNAS/download.php?download_file=BATNAS_"+layer.feature.properties.Penamaan+"_MSL_v1.1.tif'>"+layer.feature.properties.Penamaan+"</a><br/>"+
+        "Indeks Peta (EGM): <a href='http://tides.big.go.id/DEMNAS/download.php?download_file=BATNAS_"+layer.feature.properties.Penamaan+"_EGM_v1.1.tif'>"+layer.feature.properties.Penamaan+"</a>";
     });
     // batnasLayer.addTo(peta);
 
