@@ -140,6 +140,7 @@ function getColor(warna) {
 
   function zoomToFeature(e) {
     petaku.fitBounds(e.target.getBounds());
+    console.log(e.target.getBounds());
   }
 
   function highlightFeature(e) {
