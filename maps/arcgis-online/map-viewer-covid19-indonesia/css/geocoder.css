@@ -1,0 +1,35 @@
+.locate-box {
+  float: right;
+  padding: 0;
+  margin: 5px 0 5px 0;
+}
+
+.esriRTL .locate-box {
+  float: left;
+}
+
+.arcgisSearch .searchBtn,
+.arcgisSearch .searchGroup .searchInput,
+.dj_rtl .arcgisSearch .searchGroup .searchInput,
+.arcgisSearch .searchMenu {
+  border-color: #ccc;
+}
+
+.arcgisSearch .searchGroup,
+.arcgisSearch .searchGroup .searchInput {
+  color: #999;
+}
+
+#geocoderMobile {
+  float: left;
+  margin: 0 10px 0 0;
+}
+
+.dj_rtl #geocoderMobile {
+  float: right;
+  margin: 0 0 0 10px;
+}
+
+.arcgisSearch .searchGroup .searchInput {
+  width: 150px;
+}

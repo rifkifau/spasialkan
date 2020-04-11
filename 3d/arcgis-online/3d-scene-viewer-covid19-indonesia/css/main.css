@@ -1,0 +1,461 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  font-family: "Avenir Next W00", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.esriRTL label {
+  /*Example of a rule that will be applied if the app is viewed in a browser with a RTL locale like Hebrew or Arabic.*/
+}
+
+.loading-indicator {
+  /* Loading status */
+  display: none;
+  height: 100%;
+  width: 100%;
+  z-index: 500;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  background: #fff;
+}
+
+.app-loading .loading-indicator,
+.app-error .loading-indicator {
+  /* Show this class when loading or error */
+  display: block;
+}
+
+.app-loading .loading-indicator {
+  /* Loading image */
+  background-position: center center;
+  background-image: url(../images/loading.gif);
+  background-repeat: no-repeat;
+}
+
+.app-error .loading-message {
+  /* Error status */
+  background-position: top center;
+  background-image: url(../images/error.png);
+  background-repeat: no-repeat;
+  padding-top: 60px;
+  width: 100%;
+  position: absolute;
+  z-index: 2;
+  top: 40%;
+  left: 0;
+  text-align: center;
+}
+
+
+/* ESRI UI COMPONENTS */
+
+.esri-zoom .esri-widget--button {
+  width: 26px;
+  height: 26px;
+  line-height: 26px;
+  border: none;
+  outline: none;
+  font-size: 12px;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  border-radius: 0px !important;
+  -webkit-border-radius: 0px !important;
+  -moz-border-radius: 0px !important;
+  -o-border-radius: 0px !important;
+  -webkit-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.4);
+  box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.4);
+}
+
+.reverse .esri-zoom .esri-widget--button {
+  background-color: #333333;
+  color: #fff;
+}
+
+[class^="esri-icon-"]:before,
+[class*=" esri-icon-"]:before,
+[class^="icon-ui-"]:before,
+[class*=" icon-ui-"]:before {
+  padding-right: 0;
+}
+
+.esri-compass {
+  width: 26px;
+  height: 26px;
+  border: none;
+  outline: none;
+  border-radius: 13px !important;
+  -webkit-border-radius: 13px !important;
+  -moz-border-radius: 13px !important;
+  -o-border-radius: 13px !important;
+  margin: 0px !important;
+  -webkit-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.4);
+  box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.4);
+}
+
+.reverse .esri-compass {
+  background-color: #333333;
+  color: #fff;
+}
+
+/*.reverse .esri-attribution {
+  background-color: rgba(0,0,0,0.2);
+}
+
+.reverse .esri-attribution-sources {
+  color: #ffffff;
+}
+
+.reverse .esri-attribution-powered-by {
+  color: #ffffff;
+}*/
+
+
+/* Search */
+
+.esri-search .esri-search__input {
+  border: none;
+  outline: none;
+}
+
+.esri-search .esri-widget--button {
+  color: #ffffff;
+  background-color: transparent;
+}
+
+.esri-search .esri-widget--button:hover,
+.esri-search .esri-widget--button:active {
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.esri-search .esri-menu {
+  position: absolute;
+  top: -6px;
+  transform: translateY(-100%);
+  background-color: #fff;
+  color: #2c2c2c;
+  border: none;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.4);
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.4);
+}
+
+ul li {
+  list-style-type: none;
+}
+
+li {
+  list-style-position: outside;
+  margin: 0;
+  /*margin: 0.3875rem 0 0.3875rem 1.5rem;*/
+}
+
+
+/* PANELS */
+
+.shadow {
+  -webkit-box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.4);
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.4);
+}
+
+#panelView {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#panelTop {
+  position: absolute;
+  left: 15px;
+  bottom: 20px;
+  width: 320px;
+  height: auto;
+  display: inline-block;
+  padding: 5px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.dj_rtl #panelTop {
+  left: auto;
+  right: 15px;
+}
+
+#panelTop.closed {
+  bottom: 128px !important;
+}
+
+#panelTopContent {
+  display: block;
+  width: 300px;
+  min-height: 80px;
+  height: auto;
+  padding: 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.closed #panelTopContent {
+  height: 0px;
+  min-height: 0px;
+  padding: 0;
+}
+
+#panelTitle {
+  line-height: 25px;
+  font-size: 22px;
+  font-weight: 400;
+  display: block;
+  overflow: hidden;
+  height: auto;
+  max-height: 75px;
+  text-overflow: ellipsis;
+}
+
+#panelSubtitle {
+  line-height: 12px;
+  font-size: 12px;
+  font-weight: 200;
+  display: block;
+  overflow: hidden;
+  height: 12px;
+  padding-top: 5px;
+  text-overflow: ellipsis;
+}
+
+#panelButtons {
+  height: 34px;
+  padding: 5px 0 5px 0;
+  display: block;
+  overflow: hidden;
+}
+
+.panelBtn {
+  float: left;
+  width: 34px;
+  height: 34px;
+  margin-right: 10px;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 24px;
+  display: none;
+}
+
+.dj_rtl .panelBtn {
+  float: right;
+  margin-left: 10px;
+}
+
+#btnLayers {
+  background-image: url(../images/layers.png);
+}
+
+.black #btnLayers {
+  background-image: url(../images/layers_b.png);
+}
+
+#btnBasemaps {
+  background-image: url(../images/basemaps.png);
+}
+
+.black #btnBasemaps {
+  background-image: url(../images/basemaps_b.png);
+}
+
+#btnSlides {
+  background-image: url(../images/slides.png);
+}
+
+.black #btnSlides {
+  background-image: url(../images/slides_b.png);
+}
+
+#panelBar {}
+
+#panelSearch {
+  float: left;
+}
+
+.dj_rtl #panelSearch {
+  float: right;
+}
+
+#btnToggle {
+  float: right;
+  width: 24px;
+  height: 34px;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 24px;
+  background-image: url(../images/toggle.png);
+  display: none;
+}
+
+.closed #btnToggle {
+  display: block;
+}
+
+.dj_rtl #btnToggle {
+  float: left;
+}
+
+.black #btnToggle {
+  background-image: url(../images/toggle_b.png) !important;
+}
+
+#panelBottom {
+  position: absolute;
+  bottom: -150px;
+  width: 100%;
+  height: 150px;
+  background-color: rgba(0, 0, 0, 0.8);
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  display: block;
+  clear: both;
+}
+
+.opened {
+  bottom: 0px !important;
+}
+
+#panelInner {
+  position: absolute;
+  /*width: 100%;
+  height: 100%;
+  padding: 30px 10px 10px 10px;*/
+  left: 10px;
+  right: 10px;
+  top: 30px;
+  bottom: 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.panelContent {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: block;
+}
+
+.panelMsg {
+  color: #c8c8c8;
+  font-size: 12px;
+}
+
+.slideDiv {
+  float: left;
+  width: 120px;
+  height: 100px;
+  margin-right: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.dj_rtl .slideDiv {
+  float: right;
+}
+
+.slideContent {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.slideImg {
+  position: absolute;
+  top: 14px;
+  width: 120px;
+  height: 60px;
+}
+
+img.grayscale {
+  -webkit-filter: grayscale(100%);
+  filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' ><filter id='gray'><feColorMatrix in='SourceGraphic' type='saturate' values='0' /></filter></svg>#gray");
+  filter: grayscale(100%);
+}
+
+img.grayscale:hover {
+  -webkit-filter: grayscale(0%);
+  !important;
+  filter: none !important;
+}
+
+.slideLabel {
+  position: absolute;
+  top: 74px;
+  width: 100%;
+  height: 26px;
+  line-height: 26px;
+  font-size: 12px;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.slideNum {
+  position: absolute;
+  left: 5px;
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+  font-size: 12px;
+  text-align: center;
+  overflow: hidden;
+  display: block;
+  border-radius: 14px;
+  -webkit-border-radius: 14px;
+  -moz-border-radius: 14px;
+  -o-border-radius: 14px;
+}
+
+.dj_rtl .slideNum {
+  right: 5px;
+}
+
+
+/* MEDIA SPECIFIC: PHONES */
+
+@media only screen and (max-width: 480px) {
+  #panelTop {
+    position: absolute;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0;
+    width: 100% !important;
+    height: auto;
+  }
+}
