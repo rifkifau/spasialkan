@@ -1,0 +1,6 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See http://js.arcgis.com/3.15/esri/copyright.txt and http://www.arcgis.com/apps/webappbuilder/copyright.txt for details.
+//>>built
+define(["dojo/_base/declare","dojo/dom-geometry","../../../dijit/utils/MouseUtil"],function(f,g,h){return f(null,{_scrollDirection:null,_scrollDnDHandler:null,_scrollStep:10,_onMouseMove:function(){this._tryScrolling();this.inherited(arguments)},_onDndEnd:function(a){this._cleanUpScrolling();this.inherited(arguments)},_tryScrolling:function(){var a=g.position(this.grid.bodyNode),c=h.getCursorPosition(),b=this;if(c.clientX<=a.x||c.clientX>=a.x+a.w)this._scrollDirection=null;else{var d=.125*a.h,e=function(a){return b._scrollStep=
+a>=d?0:Math.ceil(Math.pow(d-a,.625)+1)};this._scrollDirection=e(c.clientY-a.y)?"up":e(a.y+a.h-c.clientY)?"down":null}this._scrollDirection?this._scrollDnDHandler||(this._scrollDnDHandler=setTimeout(function(){b._scrollDnDHandler=null;if(b._scrollDirection){var a=b.getScrollPosition();a.y+="up"===b._scrollDirection?-b._scrollStep:b._scrollStep;b.setScrollPosition(a)}},10)):this._cleanUpScrolling()},_cleanUpScrolling:function(){this._scrollDnDHandler&&clearInterval(this._scrollDnDHandler);this._scrollDnDHandler=
+null}})});

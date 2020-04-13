@@ -1,0 +1,5 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See http://js.arcgis.com/3.15/esri/copyright.txt and http://www.arcgis.com/apps/webappbuilder/copyright.txt for details.
+//>>built
+define(["esri/request","jimu/portalUtils","dojo/_base/array","dojo/Deferred","dojo/when"],function(f,g,d,h,k){var b=null;return{getTravelMode:function(b,a){return k(this._getTravelModes(),function(e){var c="";d.forEach(e.results,function(a){"supportedTravelModes"===a.paramName&&d.forEach(a.value.features,function(a){a.attributes&&a.attributes.Name===b&&(c=a.attributes.TravelMode)})});if(!c)return c;a=Number(a);if(!a||10>=a)return c;e=JSON.parse(c);e.simplificationTolerance=a;return JSON.stringify(e)})},
+_getTravelModes:function(){b||(b=new h,g.getPortal(portalUrl).loadSelfInfo().then(function(d){f({url:d.helperServices.routingUtilities.url+"/GetTravelModes/execute",content:{appID:"webappbuilder",f:"json",langCode:"en-us"},handleAs:"json"}).then(function(a){b.resolve(a)})}));return b}}});
