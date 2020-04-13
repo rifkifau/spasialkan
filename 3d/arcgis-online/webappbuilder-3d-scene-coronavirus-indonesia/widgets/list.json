@@ -1,0 +1,25 @@
+{
+  "widgets": [
+    "BasemapGallery",
+    "Coordinate",
+    "FullScreen",
+    "Slides",
+    "About",
+    "Splash",
+    "Search",
+    "Compass",
+    "Home",
+    "ZoomSlider",
+    "Navigate",
+    "Daylight",
+    "LayerList",
+    "Legend",
+    "MyLocation",
+    "3DFx",
+    "Measurement3D",
+    "Share"
+  ],
+  "_buildInfo": {
+    "manifestsMerged": true
+  }
+}

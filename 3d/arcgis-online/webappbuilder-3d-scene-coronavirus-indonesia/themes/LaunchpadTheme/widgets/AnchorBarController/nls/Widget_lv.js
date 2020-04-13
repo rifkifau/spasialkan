@@ -1,0 +1,4 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See http://js.arcgis.com/3.15/esri/copyright.txt and http://www.arcgis.com/apps/webappbuilder/copyright.txt for details.
+//>>built
+define({"dijit/nls/loading":{loadingState:"Iel\u0101d\u0113...",errorState:"Diem\u017e\u0113l rad\u0101s k\u013c\u016bda",_localized:{}},"themes/LaunchpadTheme/widgets/AnchorBarController/nls/strings":{_widgetLabel:"Enkura joslas kontrolieris",_layout_default:"Noklus\u0113juma izk\u0101rtojums",_layout_layout1:"0.\u00a0izk\u0101rtojums",more:"Vair\u0101k logr\u012bku",_localized:{}}});

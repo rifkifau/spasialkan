@@ -1,0 +1,4 @@
+// All material copyright ESRI, All Rights Reserved, unless otherwise specified.
+// See http://js.arcgis.com/3.15/esri/copyright.txt and http://www.arcgis.com/apps/webappbuilder/copyright.txt for details.
+//>>built
+define({"dijit/nls/loading":{loadingState:"\ub85c\ub4dc \uc911...",errorState:"\uc8c4\uc1a1\ud569\ub2c8\ub2e4. \uc624\ub958\uac00 \ubc1c\uc0dd\ud588\uc2b5\ub2c8\ub2e4.",_localized:{}},"themes/LaunchpadTheme/widgets/AnchorBarController/nls/strings":{_widgetLabel:"\uace0\uc815 \ub9c9\ub300\ud615 \ucee8\ud2b8\ub864\ub7ec",_layout_default:"\uae30\ubcf8 \ub808\uc774\uc544\uc6c3",_layout_layout1:"\ub808\uc774\uc544\uc6c3 0",more:"\uc704\uc82f \ub354 \ubcf4\uae30",_localized:{}}});
