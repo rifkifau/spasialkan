@@ -13,11 +13,11 @@
     ],
     "version": "2.16"
   },
-  "portalUrl": "",
-  "appId": "",
+  "portalUrl": "https://learngis.maps.arcgis.com/",
+  "appId": "b0b15cdb83ab42db9fc586315d46959b",
   "authorizedCrossOriginDomains": [],
-  "title": "ArcGIS Web Application",
-  "subtitle": "with Web AppBuilder for ArcGIS",
+  "title": "3DScene LearnGIS Tutorial",
+  "subtitle": "by Spasialkan.COM",
   "keepAppState": false,
   "logo": "images/app-logo.png",
   "httpProxy": {
