@@ -45,10 +45,10 @@ var defaultSelectionStroke = new ol.style.Stroke({
                     };
 var baseLayers = [new ol.layer.Tile({
     type: 'base',
-    title: 'Digital Globe imagery',
+    title: 'MapBox Satellite',
     source: new ol.source.XYZ({
-        attributions: [new ol.Attribution({ html: '&copy; <a href="https://www.mapbox.com/about/maps">Mapbox</a>, <a href="https://www.digitalglobe.com">DigitalGlobe</a> contributors'})],
-        url: 'http://api.tiles.mapbox.com/v4/digitalglobe.nal0g75k/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZGlnaXRhbGdsb2JlIiwiYSI6ImNpdjZuamY5eDAwMXYydHA4NmczdDlnMDYifQ.urroGlfAKc8nSsmYr5cm4Q'
+        attributions: [new ol.Attribution({ html: '&copy; <a href="https://www.mapbox.com/about/maps">Mapbox</a>'})],
+        url: 'https://api.mapbox.com/v4/mapbox.satellite/1/0/0@2x.jpg90?access_token=pk.eyJ1IjoidmVyc2l0YW5pIiwiYSI6ImNqeWUxM3BrODB5MDIzbXA4NzQzOW9idGMifQ.MUiosR2LCaSTV9q6ry4GWw'
     }),
     projection: 'EPSG:3857'
 })
@@ -59,7 +59,7 @@ var overlayLayers = [new ol.layer.Tile({
 	title: 'Peta Luas Wilayah Multiskala',
 	id: 'legenda_multiskala',
 	source: new ol.source.XYZ({
-		url: 'https://api.mapbox.com/styles/v1/versitani/cj0codgly00bc2sqpqxxmnfir/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmVyc2l0YW5pIiwiYSI6ImNpeGI5aXZ6bjAwNXcyb2tscWp4eWJxdHkifQ.YYiF2JhBC05mgzVaL-LGfw'
+		url: 'https://api.mapbox.com/styles/v1/versitani/cj0codgly00bc2sqpqxxmnfir/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmVyc2l0YW5pIiwiYSI6ImNqeWUxM3BrODB5MDIzbXA4NzQzOW9idGMifQ.MUiosR2LCaSTV9q6ry4GWw'
 	}),
     projection: 'EPSG:3857'
 })
